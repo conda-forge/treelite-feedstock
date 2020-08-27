@@ -1,0 +1,13 @@
+diff --git a/cmake/ExternalLibs.cmake b/cmake/ExternalLibs.cmake
+index 86a63f2..723e76b 100644
+--- a/cmake/ExternalLibs.cmake
++++ b/cmake/ExternalLibs.cmake
+@@ -17,7 +17,7 @@ set_target_properties(fmt PROPERTIES EXCLUDE_FROM_ALL TRUE)
+ 
+ # Protobuf
+ if(ENABLE_PROTOBUF)
+-  set(Protobuf_USE_STATIC_LIBS ON)
++  set(Protobuf_USE_STATIC_LIBS OFF)
+   find_package(Protobuf)
+   if(NOT Protobuf_FOUND)
+     message(STATUS "Did not found Protobuf in the system root. Fetching Protobuf now...")

@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "0.92" %}
+{% set version = "0.93" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,14 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 17961a4f4c5933630dfee5c7129180e9d69660f3efa05f87bc8b168081bf3fd7
+  sha256: 7d347372f7fdc069904afe93e69ed0bf696ba42d271fe2f8bf6835d2ab2f45d5
+  patches:
+    - 0001-use-dynamic-libprotobuf.patch
+    - 0002-disable-static-libs.patch
+    - 0003-py38-windows-dll-path-fix.patch
 
 build:
-  number: 2
-  skip: true  # [win]
+  number: 0
 
 requirements:
   build:

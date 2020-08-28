@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 66931b0..25a5e35 100644
+index 66931b0..485a7f6 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -43,15 +43,11 @@ if(BUILD_CPP_TEST)
@@ -19,12 +19,13 @@ index 66931b0..25a5e35 100644
    set_output_directory(${lib} ${PROJECT_BINARY_DIR})
    target_link_libraries(${lib} INTERFACE dmlc)
  endforeach()
-@@ -59,7 +55,7 @@ endforeach()
+@@ -59,8 +55,7 @@ endforeach()
  # Export install targets
  include(GNUInstallDirs)
  include(CMakePackageConfigHelpers)
 -install(TARGETS treelite treelite_static treelite_runtime treelite_runtime_static
-+install(TARGETS treelite treelite_runtime
-                 objtreelite objtreelite_common objtreelite_runtime dmlc fmt-header-only
+-                objtreelite objtreelite_common objtreelite_runtime dmlc fmt-header-only
++install(TARGETS treelite treelite_runtime dmlc fmt-header-only
      EXPORT TreeliteTargets
      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

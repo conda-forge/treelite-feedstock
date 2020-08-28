@@ -10,6 +10,7 @@ source:
   sha256: 7d347372f7fdc069904afe93e69ed0bf696ba42d271fe2f8bf6835d2ab2f45d5
   patches:
     - 0001-use-dynamic-libprotobuf.patch
+    - 0002-disable-static-libs.patch
 
 build:
   number: 0

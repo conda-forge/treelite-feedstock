@@ -11,3 +11,15 @@ index 86a63f2..723e76b 100644
    find_package(Protobuf)
    if(NOT Protobuf_FOUND)
      message(STATUS "Did not found Protobuf in the system root. Fetching Protobuf now...")
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index c92c7d1..a7fbe58 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -57,6 +57,7 @@ set_target_properties(objtreelite objtreelite_runtime objtreelite_common
+ if(ENABLE_PROTOBUF)
+   target_include_directories(objtreelite PRIVATE ${Protobuf_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR})
+   target_compile_definitions(objtreelite PRIVATE -DTREELITE_PROTOBUF_SUPPORT)
++  target_compile_definitions(objtreelite PUBLIC -DPROTOBUF_USE_DLLS)
+   target_link_libraries(objtreelite PRIVATE ${Protobuf_LIBRARIES})
+   PROTOBUF_GENERATE_CPP(TREE_PROTO_SRCS TREE_PROTO_HDRS tree.proto)
+   PROTOBUF_GENERATE_JAVA(tree_proto_java tree.proto)

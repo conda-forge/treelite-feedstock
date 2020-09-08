@@ -14,7 +14,7 @@ source:
     - 0003-py38-windows-dll-path-fix.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:

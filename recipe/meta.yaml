@@ -9,12 +9,12 @@ source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
   sha256: 7d347372f7fdc069904afe93e69ed0bf696ba42d271fe2f8bf6835d2ab2f45d5
   patches:
-    - 0001-use-dynamic-libprotobuf.patch
+    - 0001-disable-protobuf.patch
     - 0002-disable-static-libs.patch
     - 0003-py38-windows-dll-path-fix.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -27,7 +27,6 @@ requirements:
   host:
     - python
     - pip >=19.0
-    - libprotobuf
   run:
     - python
     - numpy

@@ -1,6 +1,6 @@
 mkdir build	
 cd build	
-cmake .. -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% -DENABLE_PROTOBUF=ON -GNinja	
+cmake .. -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% -GNinja	
 if errorlevel 1 exit 1	
 ninja install	
 if errorlevel 1 exit 1	

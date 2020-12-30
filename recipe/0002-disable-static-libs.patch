@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 66931b0..485a7f6 100644
+index 6a49810..e44d669 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -43,15 +43,11 @@ if(BUILD_CPP_TEST)
+@@ -51,15 +51,11 @@ if(BUILD_CPP_TEST)
  endif()
  
  add_library(treelite SHARED)
@@ -19,13 +19,40 @@ index 66931b0..485a7f6 100644
    set_output_directory(${lib} ${PROJECT_BINARY_DIR})
    target_link_libraries(${lib} INTERFACE dmlc)
  endforeach()
-@@ -59,8 +55,7 @@ endforeach()
+@@ -67,11 +63,14 @@ endforeach()
  # Export install targets
  include(GNUInstallDirs)
  include(CMakePackageConfigHelpers)
--install(TARGETS treelite treelite_static treelite_runtime treelite_runtime_static
--                objtreelite objtreelite_common objtreelite_runtime dmlc fmt-header-only
-+install(TARGETS treelite treelite_runtime dmlc fmt-header-only
+-set(INSTALL_TARGETS treelite treelite_static treelite_runtime treelite_runtime_static
+-                    objtreelite objtreelite_common objtreelite_runtime dmlc rapidjson)
++set(INSTALL_TARGETS treelite treelite_runtime
++                    objtreelite objtreelite_common objtreelite_runtime dmlc)
+ if(NOT FMTLIB_FROM_SYSTEM_ROOT)
+   list(APPEND INSTALL_TARGETS fmt-header-only)
+ endif()
++if(NOT RAPIDJSON_FROM_SYSTEM_ROOT)
++  list(APPEND INSTALL_TARGETS rapidjson)
++endif()
+ install(TARGETS ${INSTALL_TARGETS}
      EXPORT TreeliteTargets
      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+diff --git a/cmake/ExternalLibs.cmake b/cmake/ExternalLibs.cmake
+index d815aa1..6d52472 100644
+--- a/cmake/ExternalLibs.cmake
++++ b/cmake/ExternalLibs.cmake
+@@ -36,6 +36,7 @@ add_library(rapidjson INTERFACE)
+ find_package(RapidJSON)
+ if(RapidJSON_FOUND)
+   target_include_directories(rapidjson INTERFACE ${RAPIDJSON_INCLUDE_DIRS})
++  set(RAPIDJSON_FROM_SYSTEM_ROOT TRUE)
+ else()
+   message(STATUS "Did not find RapidJSON in the system root. Fetching RapidJSON now...")
+   FetchContent_Declare(
+@@ -46,6 +47,7 @@ else()
+   FetchContent_Populate(RapidJSON)
+   message(STATUS "RapidJSON was downloaded at ${rapidjson_SOURCE_DIR}.")
+   target_include_directories(rapidjson INTERFACE $<BUILD_INTERFACE:${rapidjson_SOURCE_DIR}/include>)
++  set(RAPIDJSON_FROM_SYSTEM_ROOT FALSE)
+ endif()
+ add_library(RapidJSON::rapidjson ALIAS rapidjson)
+ 

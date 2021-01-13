@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "1.0.0rc1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: fdd0884629baf98f4a155f690fc5d373bd252881229d1994d50aab715405a888
+  sha256: c8c1496c60be9b81324a1a58bc7c43686c3184c7fd8fad431506257d8e16dab4
   patches:
     - 0002-disable-static-libs.patch
     - 0003-py38-windows-dll-path-fix.patch
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -43,9 +43,9 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Model compiler for decision tree ensembles'
+  summary: Model compiler for decision tree ensembles
 
-  description: 'Treelite is a model compiler for efficient deployment of decision tree ensembles.'
+  description: Treelite is a model compiler for efficient deployment of decision tree ensembles.
   doc_url: https://treelite.readthedocs.io/
   dev_url: https://github.com/dmlc/treelite
 

@@ -8,9 +8,6 @@ package:
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
   sha256: c8c1496c60be9b81324a1a58bc7c43686c3184c7fd8fad431506257d8e16dab4
-  patches:
-    - 0002-disable-static-libs.patch
-    - 0003-py38-windows-dll-path-fix.patch
 
 build:
   number: 0

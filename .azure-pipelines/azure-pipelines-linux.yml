@@ -5,13 +5,9 @@
 jobs:
 - job: linux
   pool:
-    vmImage: ubuntu-16.04
+    vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_c_compiler_version7cxx_compiler_version7python3.6.____73_pypy:
-        CONFIG: linux_64_c_compiler_version7cxx_compiler_version7python3.6.____73_pypy
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
       linux_64_c_compiler_version7cxx_compiler_version7python3.6.____cpython:
         CONFIG: linux_64_c_compiler_version7cxx_compiler_version7python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -30,10 +26,6 @@ jobs:
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
       linux_64_c_compiler_version7cxx_compiler_version7python3.9.____cpython:
         CONFIG: linux_64_c_compiler_version7cxx_compiler_version7python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_c_compiler_version9cxx_compiler_version9python3.6.____73_pypy:
-        CONFIG: linux_64_c_compiler_version9cxx_compiler_version9python3.6.____73_pypy
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
       linux_64_c_compiler_version9cxx_compiler_version9python3.6.____cpython:
@@ -56,10 +48,6 @@ jobs:
         CONFIG: linux_64_c_compiler_version9cxx_compiler_version9python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_ppc64le_c_compiler_version7cxx_compiler_version7python3.6.____73_pypy:
-        CONFIG: linux_ppc64le_c_compiler_version7cxx_compiler_version7python3.6.____73_pypy
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le
       linux_ppc64le_c_compiler_version7cxx_compiler_version7python3.6.____cpython:
         CONFIG: linux_ppc64le_c_compiler_version7cxx_compiler_version7python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -78,10 +66,6 @@ jobs:
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le
       linux_ppc64le_c_compiler_version7cxx_compiler_version7python3.9.____cpython:
         CONFIG: linux_ppc64le_c_compiler_version7cxx_compiler_version7python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le
-      linux_ppc64le_c_compiler_version9cxx_compiler_version9python3.6.____73_pypy:
-        CONFIG: linux_ppc64le_c_compiler_version9cxx_compiler_version9python3.6.____73_pypy
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le
       linux_ppc64le_c_compiler_version9cxx_compiler_version9python3.6.____cpython:

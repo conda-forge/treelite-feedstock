@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
   sha256: 5e8df3d0c2fc141db82f43c05ce8d5e4353bdba4aa652d58e7b409b4983b5524
+  patches:
+    - 0001-workaround-gcc7-bug.patch
 
 build:
   number: 0

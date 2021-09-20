@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 5e8df3d0c2fc141db82f43c05ce8d5e4353bdba4aa652d58e7b409b4983b5524
+  sha256: 9a741e345b7a8c49f4a981fec5fdce71cbcbd7b072f6dd47d0e941c9d52f4a52
   patches:
     - 0001-workaround-gcc7-bug.patch
 

@@ -29,6 +29,8 @@ requirements:
     - scipy
 
 test:
+  requires:
+    - setuptools
   imports:
     - treelite
     - treelite_runtime

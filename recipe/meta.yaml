@@ -27,6 +27,7 @@ requirements:
     - python
     - numpy
     - scipy
+    - setuptools
 
 test:
   requires:

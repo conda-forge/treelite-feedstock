@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "2.2.1" %}
+{% set version = "2.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: ca46a052d0345122038172175ce533c55c7250d0b529a9ae2497a88308e1f5bc
+  sha256: 659b327b9be1b64e9eff8ecaf5ebb9be8a09a458c5addc31ca54cc2e2507273a
   patches:
     - 0001-remove-distutils.patch
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:

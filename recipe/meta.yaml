@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "2.2.2" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,7 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 659b327b9be1b64e9eff8ecaf5ebb9be8a09a458c5addc31ca54cc2e2507273a
-  patches:
-    - 0001-remove-distutils.patch
+  sha256: dbfc64b63e0132a853d29d6e701a0426bff0e40b2758ab513ea3f41eed003dd7
 
 build:
   number: 0
@@ -22,6 +20,8 @@ requirements:
     - ninja
     - fmt
     - rapidjson
+    - llvm-openmp  # [osx]
+    - libgomp  # [linux]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:

@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: d35d52bdf91dcd236e555746a321daffdcdfb6275064c471d876043651c6ad05
+  sha256: e8aedbb9ee02d9cbf71ce2c0e55338e7433e2e360d1bca1e9bdab60498cd9a06
 
 build:
   number: 0

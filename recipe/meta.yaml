@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "3.3.0" %}
+{% set version = "3.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 0cf6239342571e121bd1d02b7d39ac84a6c65eecae8e42e2bc7f978d1c43c112
+  sha256: b250d57b8613513b952855172f4783ffc35d3cb01fdef06cfffc3b914294e505
 
 build:
   number: 0

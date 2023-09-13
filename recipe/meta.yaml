@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "3.9.0" %}
+{% set version = "3.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,11 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: aff5c15fe5697c0b869939a5a568ce25c625e1f7c22ab86970ffa935206e9834
+  sha256: 4c365555337b2c0be65160ad8becae51a29bc32ac184f4ea66bff6ef1e933889
 
 build:
   number: 0
+  skip: true  # [python_impl == 'pypy' and win]
 
 requirements:
   build:
@@ -32,6 +33,7 @@ requirements:
     - numpy
     - scipy
     - setuptools
+    - packaging
 
 test:
   requires:

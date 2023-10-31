@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
   sha256: e92efedd05953c81fc2fd4c34caac8c502de46a136400b02d1d890c53350c0e7
+  patches:
+    - 0001-Use-typing.Sequence.patch
 
 build:
   number: 0

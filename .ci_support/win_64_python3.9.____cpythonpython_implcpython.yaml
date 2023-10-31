@@ -1,11 +1,11 @@
 c_compiler:
-- vs2019
+- vs2022
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge treelite_rc
 cxx_compiler:
-- vs2019
+- vs2022
 fmt:
 - '9'
 pin_run_as_build:

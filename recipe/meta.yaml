@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "3.9.1" %}
+{% set version = "4.0.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,10 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 4c365555337b2c0be65160ad8becae51a29bc32ac184f4ea66bff6ef1e933889
+  sha256: e92efedd05953c81fc2fd4c34caac8c502de46a136400b02d1d890c53350c0e7
+  patches:
+    - 0001-Use-typing.Sequence.patch
+    - 0002-Don-t-use-ctypes.pythonapi-when-using-PyPy.patch
 
 build:
   number: 0
@@ -28,11 +31,11 @@ requirements:
   host:
     - python
     - pip >=19.0
+    - hatchling >=1.12.1
   run:
     - python
     - numpy
     - scipy
-    - setuptools
     - packaging
 
 test:
@@ -40,7 +43,6 @@ test:
     - setuptools
   imports:
     - treelite
-    - treelite_runtime
 
 about:
   home: https://github.com/dmlc/treelite
@@ -49,7 +51,7 @@ about:
   license_file: LICENSE
   summary: Model compiler for decision tree ensembles
 
-  description: Treelite is a model compiler for efficient deployment of decision tree ensembles.
+  description: Universal model exchange and serialization format for decision tree forests
   doc_url: https://treelite.readthedocs.io/
   dev_url: https://github.com/dmlc/treelite
 

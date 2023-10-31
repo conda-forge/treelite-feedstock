@@ -1,0 +1,6 @@
+channel_targets:
+  - conda-forge treelite_rc
+c_compiler:
+  - vs2022                     # [win]
+cxx_compiler:
+  - vs2022                     # [win]

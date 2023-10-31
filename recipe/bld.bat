@@ -5,8 +5,5 @@ if errorlevel 1 exit 1
 ninja install	
 if errorlevel 1 exit 1	
 cd ../python	
-python setup.py install --single-version-externally-managed --record=record.txt	
+python -m pip install -v . --config-settings use_system_libtreelite=True
 if errorlevel 1 exit 1	
-cd ../runtime/python	
-python setup.py install --single-version-externally-managed --record=record.txt	
-if errorlevel 1 exit 1

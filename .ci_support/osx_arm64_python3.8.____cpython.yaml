@@ -3,19 +3,19 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '15'
+- '16'
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge treelite_rc
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '15'
+- '16'
 fmt:
 - '9'
 llvm_openmp:
-- '15'
+- '16'
 macos_machine:
 - arm64-apple-darwin20.0.0
 pin_run_as_build:

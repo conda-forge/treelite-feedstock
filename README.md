@@ -13,7 +13,7 @@ Development: https://github.com/dmlc/treelite
 
 Documentation: https://treelite.readthedocs.io/
 
-Treelite is a model compiler for efficient deployment of decision tree ensembles.
+Universal model exchange and serialization format for decision tree forests
 
 Current build status
 ====================

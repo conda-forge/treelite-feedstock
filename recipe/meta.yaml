@@ -17,7 +17,6 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - hatchling >=1.12.1
     - cmake >=3.14
     - ninja
     - fmt
@@ -29,6 +28,7 @@ requirements:
   host:
     - python
     - pip >=19.0
+    - hatchling >=1.12.1
   run:
     - python
     - numpy

@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "4.0.0rc1" %}
+{% set version = "4.0.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,8 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: e92efedd05953c81fc2fd4c34caac8c502de46a136400b02d1d890c53350c0e7
+  sha256: 21fcb179e0d887c3741ee9a55f0752017fdfacd59a0b2de4032ef96efe2171ad
   patches:
-    - 0001-Use-typing.Sequence.patch
     - 0002-Don-t-use-ctypes.pythonapi-when-using-PyPy.patch
 
 build:

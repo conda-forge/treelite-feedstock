@@ -246,14 +246,14 @@ Current release info
 Installing treelite
 ===================
 
-Installing `treelite` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `treelite` from the `conda-forge/label/treelite_rc` channel can be achieved by adding `conda-forge/label/treelite_rc` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/treelite_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `treelite` can be installed with `conda`:
+Once the `conda-forge/label/treelite_rc` channel has been enabled, `treelite` can be installed with `conda`:
 
 ```
 conda install treelite
@@ -268,26 +268,26 @@ mamba install treelite
 It is possible to list all of the versions of `treelite` available on your platform with `conda`:
 
 ```
-conda search treelite --channel conda-forge
+conda search treelite --channel conda-forge/label/treelite_rc
 ```
 
 or with `mamba`:
 
 ```
-mamba search treelite --channel conda-forge
+mamba search treelite --channel conda-forge/label/treelite_rc
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search treelite --channel conda-forge
+mamba repoquery search treelite --channel conda-forge/label/treelite_rc
 
 # List packages depending on `treelite`:
-mamba repoquery whoneeds treelite --channel conda-forge
+mamba repoquery whoneeds treelite --channel conda-forge/label/treelite_rc
 
 # List dependencies of `treelite`:
-mamba repoquery depends treelite --channel conda-forge
+mamba repoquery depends treelite --channel conda-forge/label/treelite_rc
 ```
 
 
@@ -309,7 +309,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance

@@ -288,14 +288,14 @@ Current release info
 Installing treelite
 ===================
 
-Installing `treelite` from the `conda-forge/label/treelite_rc` channel can be achieved by adding `conda-forge/label/treelite_rc` to your channels with:
+Installing `treelite` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/treelite_rc
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/treelite_rc` channel has been enabled, `treelite` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `treelite` can be installed with `conda`:
 
 ```
 conda install treelite
@@ -310,26 +310,26 @@ mamba install treelite
 It is possible to list all of the versions of `treelite` available on your platform with `conda`:
 
 ```
-conda search treelite --channel conda-forge/label/treelite_rc
+conda search treelite --channel conda-forge
 ```
 
 or with `mamba`:
 
 ```
-mamba search treelite --channel conda-forge/label/treelite_rc
+mamba search treelite --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search treelite --channel conda-forge/label/treelite_rc
+mamba repoquery search treelite --channel conda-forge
 
 # List packages depending on `treelite`:
-mamba repoquery whoneeds treelite --channel conda-forge/label/treelite_rc
+mamba repoquery whoneeds treelite --channel conda-forge
 
 # List dependencies of `treelite`:
-mamba repoquery depends treelite --channel conda-forge/label/treelite_rc
+mamba repoquery depends treelite --channel conda-forge
 ```
 
 

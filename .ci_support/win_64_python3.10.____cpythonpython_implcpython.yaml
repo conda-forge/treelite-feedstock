@@ -3,7 +3,7 @@ c_compiler:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge treelite_rc
+- conda-forge main
 cxx_compiler:
 - vs2022
 fmt:

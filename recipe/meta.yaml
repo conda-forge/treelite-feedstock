@@ -10,6 +10,7 @@ source:
   sha256: 2f1b19e0e05298c823e9cdd7dc3955c2f006714a1a8a3fb80dd5277ec426de61
   patches:
     - 0001-Restore-support-for-Python-3.8.patch
+    - 0002-PyPy-compatibility-patch.patch
 
 build:
   number: 0

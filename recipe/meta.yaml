@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "4.1.0" %}
+{% set version = "4.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,7 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 2f1b19e0e05298c823e9cdd7dc3955c2f006714a1a8a3fb80dd5277ec426de61
-  patches:
-    - 0001-Restore-support-for-Python-3.8.patch
-    - 0002-PyPy-compatibility-patch.patch
+  sha256: 12dfb64e82dc07ee368a29f929ad93570af0692c6b04e8138e7138831ef2924a
 
 build:
   number: 0

@@ -1,0 +1,25 @@
+From ff738bcc6a3b51186bf45d366d211e54f7bbb3fa Mon Sep 17 00:00:00 2001
+From: Hyunsu Cho <chohyu01@cs.washington.edu>
+Date: Mon, 4 Mar 2024 12:44:41 -0800
+Subject: [PATCH] Open libtreelite.so with global visibility
+
+---
+ python/treelite/core.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/python/treelite/core.py b/python/treelite/core.py
+index 9c8ddac..cbaf61f 100644
+--- a/python/treelite/core.py
++++ b/python/treelite/core.py
+@@ -36,7 +36,7 @@ def _load_lib():
+         os.add_dll_directory(
+             os.path.join(os.path.normpath(sys.base_prefix), "Library", "bin")
+         )
+-    lib = ctypes.cdll.LoadLibrary(lib_path[0])
++    lib = ctypes.CDLL(lib_path[0], mode=ctypes.RTLD_GLOBAL)
+     lib.TreeliteGetLastError.restype = ctypes.c_char_p
+     lib.log_callback = _log_callback
+     lib.warn_callback = _warn_callback
+-- 
+2.34.1
+

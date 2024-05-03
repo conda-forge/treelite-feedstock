@@ -22,7 +22,7 @@ requirements:
     - cmake >=3.14
     - ninja
     - fmt
-    - rapidjson>=1.1.0,<1.1.0.post*
+    - rapidjson >=1.1.0,<1.1.0.post*
     - llvm-openmp  # [osx]
     - libgomp  # [linux]
     - {{ compiler('c') }}

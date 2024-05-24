@@ -12,7 +12,7 @@ source:
     - 0001-Open-libtreelite.so-with-global-visibility.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [python_impl == 'pypy' and win]
 
 requirements:
@@ -22,7 +22,7 @@ requirements:
     - cmake >=3.14
     - ninja
     - fmt
-    - rapidjson >=1.1.0,<1.1.0.post*
+    - rapidjson >=v1.1.0.post20240409
     - llvm-openmp  # [osx]
     - libgomp  # [linux]
     - {{ compiler('c') }}

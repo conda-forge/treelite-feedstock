@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 45c7d40005a83d8afbaa393c367500ceb70b9f8f
+  sha256: 11170cf67eab877486eac7a308d201c139b0f69057819e65f56facff675eb6a3
   patches:
     - 0001-Open-libtreelite.so-with-global-visibility.patch
     - 0002-Compatibility-patch-for-latest-RapidJSON.patch

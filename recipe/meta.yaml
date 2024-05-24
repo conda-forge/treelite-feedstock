@@ -10,6 +10,7 @@ source:
   sha256: d848fbc751ed55fb02de5ff66f68c32c0a29d01d7810ae2700c6afb2e8e721dc
   patches:
     - 0001-Open-libtreelite.so-with-global-visibility.patch
+    - 0002-Compatibility-patch-for-latest-RapidJSON.patch
 
 build:
   number: 3

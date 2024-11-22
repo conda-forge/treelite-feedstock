@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "4.3.0" %}
+{% set version = "4.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 3196f082cbf1de8807b71f56dae0f6a0dad0524fec155b43679b18a1e71f1e0b
+  sha256: fdaaf0e24037d18d2c34c3909b247877abf0f64ea32a6f8fff86bc8627524216
   patches:
     - 0001-Open-libtreelite.so-with-global-visibility.patch
 

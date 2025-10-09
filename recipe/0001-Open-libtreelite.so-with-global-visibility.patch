@@ -1,7 +1,7 @@
-From b047026b90209b4b348b41ae5a2e8c5539a64f2b Mon Sep 17 00:00:00 2001
+From ca6b67d530059a3aea73459528023f6c421d7472 Mon Sep 17 00:00:00 2001
 From: Hyunsu Cho <phcho@nvidia.com>
-Date: Thu, 21 Nov 2024 23:44:03 -0800
-Subject: [PATCH] Open libtreelite.so with global visibility
+Date: Wed, 8 Oct 2025 21:37:04 -0700
+Subject: [PATCH 1/2] Open libtreelite.so with global visibility
 
 ---
  python/treelite/core.py | 2 +-
@@ -21,5 +21,5 @@ index 0393e76..195a05d 100644
      lib.log_callback = _log_callback
      lib.warn_callback = _warn_callback
 -- 
-2.34.1
+2.43.0
 

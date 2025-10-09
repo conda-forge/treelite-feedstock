@@ -1,0 +1,72 @@
+From bcf88d9810fcdb3deca5ef5edfd7acd3934acf49 Mon Sep 17 00:00:00 2001
+From: Hyunsu Cho <phcho@nvidia.com>
+Date: Wed, 8 Oct 2025 21:52:05 -0700
+Subject: [PATCH 2/2] Change UBJSON string to string_view<char>
+
+---
+ include/treelite/c_api.h           | 2 +-
+ include/treelite/model_loader.h    | 2 +-
+ src/c_api/model_loader.cc          | 4 ++--
+ src/model_loader/xgboost_ubjson.cc | 2 +-
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/include/treelite/c_api.h b/include/treelite/c_api.h
+index cf06f66..0b6198e 100644
+--- a/include/treelite/c_api.h
++++ b/include/treelite/c_api.h
+@@ -139,7 +139,7 @@ TREELITE_DLL int TreeliteLoadXGBoostModelUBJSON(
+  * \return 0 for success, -1 for failure
+  */
+ TREELITE_DLL int TreeliteLoadXGBoostModelFromUBJSONString(
+-    uint8_t const* ubjson_str, size_t length, char const* config_json, TreeliteModelHandle* out);
++    char const* ubjson_str, size_t length, char const* config_json, TreeliteModelHandle* out);
+ /*!
+  * \brief Inspect the first few bytes of an XGBoost model and heuristically determine whether
+  *        it's using the JSON or UBJSON format.
+diff --git a/include/treelite/model_loader.h b/include/treelite/model_loader.h
+index f58cb18..da20478 100644
+--- a/include/treelite/model_loader.h
++++ b/include/treelite/model_loader.h
+@@ -72,7 +72,7 @@ std::unique_ptr<treelite::Model> LoadXGBoostModelUBJSON(
+  * \return Loaded model
+  */
+ std::unique_ptr<treelite::Model> LoadXGBoostModelFromUBJSONString(
+-    std::basic_string_view<std::uint8_t> ubjson_str, std::string const& config_json);
++    std::string_view ubjson_str, std::string const& config_json);
+ 
+ /*!
+  * \brief Inspect the first few bytes of an XGBoost model and heuristically determine whether
+diff --git a/src/c_api/model_loader.cc b/src/c_api/model_loader.cc
+index e7e1301..7de4043 100644
+--- a/src/c_api/model_loader.cc
++++ b/src/c_api/model_loader.cc
+@@ -78,11 +78,11 @@ int TreeliteLoadXGBoostModelUBJSON(
+   API_END();
+ }
+ 
+-int TreeliteLoadXGBoostModelFromUBJSONString(std::uint8_t const* ubjson_str, std::size_t length,
++int TreeliteLoadXGBoostModelFromUBJSONString(char const* ubjson_str, std::size_t length,
+     char const* config_json, TreeliteModelHandle* out) {
+   API_BEGIN();
+   std::unique_ptr<treelite::Model> model = treelite::model_loader::LoadXGBoostModelFromUBJSONString(
+-      std::basic_string_view<std::uint8_t>{ubjson_str, length}, config_json);
++      std::string_view{ubjson_str, length}, config_json);
+   *out = static_cast<TreeliteModelHandle>(model.release());
+   API_END();
+ }
+diff --git a/src/model_loader/xgboost_ubjson.cc b/src/model_loader/xgboost_ubjson.cc
+index 0fddfad..43d0f99 100644
+--- a/src/model_loader/xgboost_ubjson.cc
++++ b/src/model_loader/xgboost_ubjson.cc
+@@ -37,7 +37,7 @@ std::unique_ptr<treelite::Model> LoadXGBoostModelUBJSON(
+ }
+ 
+ std::unique_ptr<treelite::Model> LoadXGBoostModelFromUBJSONString(
+-    std::basic_string_view<std::uint8_t> ubjson_str, std::string const& config_json) {
++    std::string_view ubjson_str, std::string const& config_json) {
+   nlohmann::json parsed_config = nlohmann::json::parse(config_json);
+   return ParseStream(ubjson_str, parsed_config);
+ }
+-- 
+2.43.0
+

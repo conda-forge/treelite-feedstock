@@ -10,6 +10,7 @@ source:
   sha256: d1970c97d7a5aa5ff8527d393e922c1bd63ad59ed09549367481fae65d974fad
   patches:
     - 0001-Open-libtreelite.so-with-global-visibility.patch
+    - 0002-Change-UBJSON-string-to-string_view-char.patch
 
 build:
   number: 0

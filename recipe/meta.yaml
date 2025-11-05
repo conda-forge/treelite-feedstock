@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "4.5.1" %}
+{% set version = "4.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: 8799957ded52bd2e88d3dafb1340fa9b8676650d158bcb6a2fdf5672cdef6cbd
+  sha256: ccc568c5cacf97312a5e3f4275fc5dd060c52b0b3723ad433766a4ba659c354a
   patches:
     - 0001-Open-libtreelite.so-with-global-visibility.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [python_impl == 'pypy' and win]
 
 requirements:
@@ -49,7 +49,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: Model compiler for decision tree ensembles
+  summary: Universal model exchange and serialization format for decision tree forests
 
   description: Universal model exchange and serialization format for decision tree forests
   doc_url: https://treelite.readthedocs.io/

@@ -7,7 +7,7 @@ Home: https://github.com/dmlc/treelite
 
 Package license: Apache-2.0
 
-Summary: Model compiler for decision tree ensembles
+Summary: Universal model exchange and serialization format for decision tree forests
 
 Development: https://github.com/dmlc/treelite
 

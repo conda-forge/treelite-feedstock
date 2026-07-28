@@ -19,7 +19,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '19'
 fmt:
-- '12.0'
+- '12.1'
 llvm_openmp:
 - '19'
 macos_machine:

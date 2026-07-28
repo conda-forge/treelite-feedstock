@@ -371,5 +371,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@hcho3](https://github.com/hcho3/)
+* [@chyunsu3](https://github.com/chyunsu3/)
 

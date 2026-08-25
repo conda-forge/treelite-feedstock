@@ -5,7 +5,7 @@ if errorlevel 1 exit 1
 ninja install	
 if errorlevel 1 exit 1	
 cd ../python	
-python -m pip install . -vvv \
-        --config-settings=wheel.platlib=false \
+python -m pip install . -vvv ^
+        --config-settings=wheel.platlib=false ^
         --config-settings=wheel.cmake=false
 if errorlevel 1 exit 1	

@@ -49,10 +49,9 @@ source run_conda_forge_build_setup
 # make the build number clobber
 make_build_number "${FEEDSTOCK_ROOT}" "${RECIPE_ROOT}" "${CONFIG_FILE}"
 
-if [[ "${HOST_PLATFORM}" != "${BUILD_PLATFORM}" ]] && [[ "${HOST_PLATFORM}" != linux-* ]] && [[ "${BUILD_WITH_CONDA_DEBUG:-0}" != 1 ]]; then
+if [[ "${HOST_PLATFORM}" != "${BUILD_PLATFORM}" ]] && [[ "${BUILD_WITH_CONDA_DEBUG:-0}" != 1 ]]; then
     EXTRA_CB_OPTIONS="${EXTRA_CB_OPTIONS:-} --no-test"
 fi
-
 
 ( endgroup "Configuring conda" ) 2> /dev/null
 
@@ -67,7 +66,7 @@ if [[ "${BUILD_WITH_CONDA_DEBUG:-0}" == 1 ]]; then
     #   - --output-id vs. --output-name
     #   - --clobber-file vs. none
     #   - none vs. --target-platform
-    conda debug \
+    CONDA_SUBDIR="${BUILD_PLATFORM}" conda debug \
         "${RECIPE_ROOT}" \
         -m "${CI_SUPPORT}/${CONFIG}.yaml" \
         ${EXTRA_CB_OPTIONS:-} \
@@ -83,7 +82,7 @@ else
     #   - --clobber-file vs. none
     #   - none vs. --target-platform
     #   - --extra-meta a=b c=d vs. --extra-meta a=b --extra-meta c=d
-    conda-build \
+    CONDA_SUBDIR="${BUILD_PLATFORM}" conda-build \
         "${RECIPE_ROOT}" \
         -m "${CI_SUPPORT}/${CONFIG}.yaml" \
         ${EXTRA_CB_OPTIONS:-} \

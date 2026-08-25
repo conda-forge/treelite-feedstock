@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "4.7.0" %}
+{% set version = "4.7.1" %}
 
 package:
   name: {{ name|lower }}

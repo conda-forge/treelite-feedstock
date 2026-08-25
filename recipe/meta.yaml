@@ -14,6 +14,7 @@ source:
 build:
   number: 0
   skip: true  # [python_impl == 'pypy' and win]
+  skip: true  # [py<311]
 
 requirements:
   build:

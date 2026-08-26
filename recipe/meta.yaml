@@ -1,5 +1,5 @@
 {% set name = "treelite" %}
-{% set version = "4.7.0" %}
+{% set version = "4.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/dmlc/treelite/archive/{{ version }}.tar.gz
-  sha256: d267a3ff3f6c030f127a8066d3cae0545497de901185765635c045df6fa7059e
+  sha256: 59876010b8f7494a4d7ae568db76c92970f899187fc8feee8292b8c0f672b6a2
   patches:
     - 0001-Open-libtreelite.so-with-global-visibility.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [python_impl == 'pypy' and win]
 
 requirements:
